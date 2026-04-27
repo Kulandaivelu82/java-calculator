@@ -34,4 +34,24 @@ class CalculatorTest {
     void testDivideByZeroThrows() {
         assertThrows(IllegalArgumentException.class, () -> calc.divide(10, 0));
     }
+
+    @Test
+    void testAreaOfCircle() {
+        assertEquals(Math.PI * 1 * 1, calc.areaOfCircle(1));
+        assertEquals(Math.PI * 4 * 4, calc.areaOfCircle(4), 0.0001);
+        assertEquals(Math.PI * 5 * 5, calc.areaOfCircle(5), 0.0001);
+        assertEquals(0, calc.areaOfCircle(0));
+    }
+
+    @Test
+    void testAreaOfCircleWithDecimal() {
+        assertEquals(Math.PI * 2.5 * 2.5, calc.areaOfCircle(2.5), 0.0001);
+        assertEquals(Math.PI * 0.5 * 0.5, calc.areaOfCircle(0.5), 0.0001);
+    }
+
+    @Test
+    void testAreaOfCircleNegativeRadiusThrows() {
+        assertThrows(IllegalArgumentException.class, () -> calc.areaOfCircle(-5));
+        assertThrows(IllegalArgumentException.class, () -> calc.areaOfCircle(-1.5));
+    }
 }

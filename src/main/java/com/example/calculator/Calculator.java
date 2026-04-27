@@ -23,4 +23,19 @@ public class Calculator {
         }
         return (double) a / b;
     }
+
+    /**
+     * Calculates the area of a circle given its radius.
+     * Formula: A = π * r²
+     *
+     * @param radius the radius of the circle
+     * @return the area of the circle
+     * @throws IllegalArgumentException if radius is negative
+     */
+    public double areaOfCircle(double radius) {
+        if (radius < 0) {
+            throw new IllegalArgumentException("Radius cannot be negative");
+        }
+        return Math.PI * radius * radius;
+    }
 }
