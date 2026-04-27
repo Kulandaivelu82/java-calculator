@@ -54,4 +54,26 @@ class CalculatorTest {
         assertThrows(IllegalArgumentException.class, () -> calc.areaOfCircle(-5));
         assertThrows(IllegalArgumentException.class, () -> calc.areaOfCircle(-1.5));
     }
+
+    @Test
+    void testAreaOfRectangle() {
+        assertEquals(12, calc.areaOfRectangle(3, 4));
+        assertEquals(20, calc.areaOfRectangle(4, 5));
+        assertEquals(0, calc.areaOfRectangle(0, 5));
+        assertEquals(0, calc.areaOfRectangle(3, 0));
+    }
+
+    @Test
+    void testAreaOfRectangleWithDecimals() {
+        assertEquals(7.5, calc.areaOfRectangle(2.5, 3), 0.0001);
+        assertEquals(1.5, calc.areaOfRectangle(1.5, 1), 0.0001);
+        assertEquals(6.25, calc.areaOfRectangle(2.5, 2.5), 0.0001);
+    }
+
+    @Test
+    void testAreaOfRectangleNegativeDimensionsThrows() {
+        assertThrows(IllegalArgumentException.class, () -> calc.areaOfRectangle(-3, 4));
+        assertThrows(IllegalArgumentException.class, () -> calc.areaOfRectangle(3, -4));
+        assertThrows(IllegalArgumentException.class, () -> calc.areaOfRectangle(-3, -4));
+    }
 }
