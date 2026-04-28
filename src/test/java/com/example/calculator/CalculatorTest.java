@@ -3,10 +3,15 @@ package com.example.calculator;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Integration tests for the Calculator class.
+ * Tests that Calculator properly delegates to ArithmeticCalculator and AreaCalculator.
+ */
 class CalculatorTest {
 
     private final Calculator calc = new Calculator();
 
+    // Arithmetic operation tests (delegating to ArithmeticCalculator)
     @Test
     void testAdd() {
         assertEquals(5, calc.add(2, 3));
@@ -35,6 +40,7 @@ class CalculatorTest {
         assertThrows(IllegalArgumentException.class, () -> calc.divide(10, 0));
     }
 
+    // Area calculation tests (delegating to AreaCalculator)
     @Test
     void testAreaOfRectangle() {
         assertEquals(12, calc.areaOfRectangle(3, 4));
