@@ -1,20 +1,17 @@
+# Eclipse compiled output
+bin/
+
 # Compiled class files
 *.class
-
-# Maven
-target/
 
 # Logs
 *.log
 
-# IDE files
-.idea/
-*.iml
-.vscode/
-.classpath
-.project
-.settings/
-
 # OS
 .DS_Store
 Thumbs.db
+
+# Other IDEs
+.idea/
+*.iml
+.vscode/
