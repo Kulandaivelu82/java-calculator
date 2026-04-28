@@ -9,6 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         Calculator calc = new Calculator();
+        AreaCalculator areaCalculator = new AreaCalculator();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("=== Simple Java Calculator ===");
@@ -26,6 +27,17 @@ public class Main {
             System.out.println(a + " / " + b + " = " + calc.divide(a, b));
         } else {
             System.out.println("Skipping division (cannot divide by zero).");
+        }
+
+        System.out.println();
+        System.out.print("Enter circle radius: ");
+        double radius = scanner.nextDouble();
+
+        try {
+            System.out.println("Area of circle with radius " + radius + " = "
+                    + areaCalculator.areaOfCircle(radius));
+        } catch (IllegalArgumentException ex) {
+            System.out.println("Skipping circle area calculation (" + ex.getMessage() + ").");
         }
 
         scanner.close();
