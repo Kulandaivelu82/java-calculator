@@ -50,4 +50,23 @@ class AreaCalculatorTest {
         assertThrows(IllegalArgumentException.class, () -> calculator.areaOfTriangle(3, -4));
         assertThrows(IllegalArgumentException.class, () -> calculator.areaOfTriangle(-3, -4));
     }
+
+    @Test
+    void testAreaOfCircle() {
+        assertEquals(Math.PI, calculator.areaOfCircle(1), 0.0001);
+        assertEquals(4 * Math.PI, calculator.areaOfCircle(2), 0.0001);
+        assertEquals(0, calculator.areaOfCircle(0), 0.0001);
+    }
+
+    @Test
+    void testAreaOfCircleWithDecimals() {
+        assertEquals(Math.PI * 2.25, calculator.areaOfCircle(1.5), 0.0001);
+        assertEquals(Math.PI * 6.25, calculator.areaOfCircle(2.5), 0.0001);
+    }
+
+    @Test
+    void testAreaOfCircleNegativeRadiusThrows() {
+        assertThrows(IllegalArgumentException.class, () -> calculator.areaOfCircle(-1));
+        assertThrows(IllegalArgumentException.class, () -> calculator.areaOfCircle(-2.5));
+    }
 }
