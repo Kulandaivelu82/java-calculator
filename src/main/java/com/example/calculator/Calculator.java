@@ -39,4 +39,20 @@ public class Calculator {
         }
         return width * height;
     }
+
+    /**
+     * Calculates the area of a triangle given its base and height.
+     * Formula: A = (base * height) / 2
+     *
+     * @param base the base of the triangle
+     * @param height the height of the triangle
+     * @return the area of the triangle
+     * @throws IllegalArgumentException if base or height is negative
+     */
+    public double areaOfTriangle(double base, double height) {
+        if (base < 0 || height < 0) {
+            throw new IllegalArgumentException("Base and height cannot be negative");
+        }
+        return (base * height) / 2.0;
+    }
 }
